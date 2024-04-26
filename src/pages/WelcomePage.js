@@ -1,10 +1,14 @@
+import React from 'react';
 import { useState } from 'react';
 import { Flex, Text, Box, VStack, Container, useToast } from '@chakra-ui/react';
 import StockSelectionForm from '../components/StockSelectionForm';
 import ResultsDisplay from '../components/ResultsDisplay';
 import { calculateInvest } from '../services/calculateInvest';
+import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
 
 function WelcomePage() {
+  const { t } = useTranslation(); // Initialize the useTranslation hook
+
   const [investmentResults, setInvestmentResults] = useState(null);
   const [selectedStock, setSelectedStock] = useState('');
   const [monthlyInvestment, setMonthlyInvestment] = useState('');
@@ -23,8 +27,8 @@ function WelcomePage() {
       .catch(error => {
         console.error("Error in calculation:", error);
         toast({
-          title: 'Calculation Error',
-          description: "Failed to calculate investment returns. Please check your inputs or try again later.",
+          title: t('calculationError'), // Translate the title
+          description: t('calculationErrorMessage'), // Translate the error message
           status: 'error',
           duration: 5000,
           isClosable: true,
@@ -50,7 +54,7 @@ function WelcomePage() {
             monthlyInvestment={monthlyInvestment} 
           />
         ) : (
-          <Text p={5}>Enter details and calculate to see results.</Text>
+          <Text p={5}>{t('noResults')}</Text>
         )}
       </Box>
     </Flex>

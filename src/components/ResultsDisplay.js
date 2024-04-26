@@ -1,6 +1,10 @@
+import React from 'react';
 import { Box, Text, Stat, StatLabel, StatNumber, StatHelpText, VStack } from '@chakra-ui/react';
+import { useTranslation } from 'react-i18next'; // Import the useTranslation hook
 
 function ResultsDisplay({ investmentResults, stockName, startYear, monthlyInvestment }) {
+  const { t } = useTranslation(); // Initialize the useTranslation hook
+
   // Helper function to format numbers as currency
   const formatCurrency = (value) => {
     return new Intl.NumberFormat('en-US', {
@@ -15,13 +19,14 @@ function ResultsDisplay({ investmentResults, stockName, startYear, monthlyInvest
     return (
       <VStack spacing={4} align="stretch">
         <Box p={5} shadow="md" borderWidth="1px">
-          <Text>No results available. Please enter all the required details to see the results.</Text>
+          <Text>{t('noResults')}</Text> {/* Translate the 'No results available' message */}
         </Box>
       </VStack>
     );
   }
 
   const summaryText = getSummaryText(
+    t,
     stockName,
     startYear,
     monthlyInvestment,
@@ -36,27 +41,27 @@ function ResultsDisplay({ investmentResults, stockName, startYear, monthlyInvest
     <VStack spacing={4} align="stretch">
       <Box p={5} shadow="md" borderWidth="1px">
         <Stat>
-          <StatLabel>Total Investment</StatLabel>
+          <StatLabel>{t('totalInvestment')}</StatLabel> {/* Translate the 'Total Investment' label */}
           <StatNumber>{formatCurrency(investmentResults.totalInvestment)}</StatNumber>
         </Stat>
       </Box>
       <Box p={5} shadow="md" borderWidth="1px">
         <Stat>
-          <StatLabel>Total Stocks Acquired</StatLabel>
-          <StatNumber>{parseFloat(investmentResults.totalStocks).toFixed(2)} shares</StatNumber>
+          <StatLabel>{t('totalStocksAcquired')}</StatLabel> {/* Translate the 'Total Stocks Acquired' label */}
+          <StatNumber>{parseFloat(investmentResults.totalStocks).toFixed(2)} {t('shares')}</StatNumber>
         </Stat>
       </Box>
       <Box p={5} shadow="md" borderWidth="1px">
         <Stat>
-          <StatLabel>Current Worth</StatLabel>
+          <StatLabel>{t('currentWorth')}</StatLabel> {/* Translate the 'Current Worth' label */}
           <StatNumber color="green.500">{formatCurrency(investmentResults.currentWorth)}</StatNumber>
         </Stat>
       </Box>
       <Box p={5} shadow="md" borderWidth="1px">
         <Stat>
-          <StatLabel>Profit / Gain</StatLabel>
+          <StatLabel>{t('profitGain')}</StatLabel> {/* Translate the 'Profit / Gain' label */}
           <StatNumber color="green.500">{formatCurrency(investmentResults.profit)}</StatNumber>
-          <StatHelpText>{investmentResults.profit >= 0 ? 'Positive Return' : 'Negative Return'}</StatHelpText>
+          <StatHelpText>{investmentResults.profit >= 0 ? t('positiveReturn') : t('negativeReturn')}</StatHelpText>
         </Stat>
       </Box>
       <Box p={5} shadow="md" borderWidth="1px">
@@ -66,8 +71,16 @@ function ResultsDisplay({ investmentResults, stockName, startYear, monthlyInvest
   );
 }
 
-function getSummaryText(stockName, startYear, monthlyInvestment, totalStocks, totalInvestment, currentWorth, profit, formatCurrency) {
-  return `If you had started investing in ${stockName} in ${startYear} with a monthly contribution of ${formatCurrency(monthlyInvestment)}, you would now own approximately ${parseFloat(totalStocks).toFixed(2)} shares. Your total expenditure would have been ${formatCurrency(totalInvestment)}, but the current value of those shares is an impressive ${formatCurrency(currentWorth)}. This systematic investment strategy would have yielded you a profit of ${formatCurrency(profit)}, transforming a modest monthly investment into a significant financial gain.`;
+function getSummaryText(t, stockName, startYear, monthlyInvestment, totalStocks, totalInvestment, currentWorth, profit, formatCurrency) {
+  return t('investmentSummary', {
+    stockName,
+    startYear,
+    monthlyInvestment: formatCurrency(monthlyInvestment),
+    totalStocks: parseFloat(totalStocks).toFixed(2),
+    totalInvestment: formatCurrency(totalInvestment),
+    currentWorth: formatCurrency(currentWorth),
+    profit: formatCurrency(profit)
+  });
 }
 
 export default ResultsDisplay;
