@@ -21,31 +21,14 @@ const parseCsv = (csvData) => {
     });
 };
 
-const adjustForSplits = (stockData, splits) => {
-    const adjustedData = stockData.map(data => {
-        const dataDate = new Date(data.Date);
-        splits.forEach(split => {
-            const splitDate = new Date(split.Date);
-            if (dataDate <= splitDate) {
-                const [numerator, denominator] = split['Stock Splits'].split(':').map(Number);
-                data['Adj Close'] *= (denominator / numerator);
-            }
-        });
-        return data;
-    });
-    return adjustedData;
-};
-
 const calculateInvest = async (monthlyInvestment, startYear, stockName) => {
     const stockFilePath = `/data/${stockName}.csv`;
-    const splitsFilePath = `/data/${stockName}-SPLITS.csv`;
 
     try {
-        const [stockCsv, splitsCsv] = await Promise.all([fetchCsv(stockFilePath), fetchCsv(splitsFilePath)]);
-        const [stockData, splitsData] = await Promise.all([parseCsv(stockCsv), parseCsv(splitsCsv)]);
-        const adjustedData = adjustForSplits(stockData, splitsData);
+        const stockCsv = await fetchCsv(stockFilePath);
+        const stockData = await parseCsv(stockCsv);
 
-        return simulateInvestment(adjustedData, monthlyInvestment, startYear);
+        return simulateInvestment(stockData, monthlyInvestment, startYear);
     } catch (error) {
         console.error('Error in calculation service:', error);
         return null;
