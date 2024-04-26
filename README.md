@@ -1,53 +1,61 @@
-# AudioScripter 🎙️
+# Stock Market Simulator 📈💼
 
-AudioScripter is a simple tool that uses OpenAI's Whisper API to transcribe voice recordings into text. Users can easily record or upload audio and use their own OpenAI API key for transcription, making it straightforward and user-friendly.
+Welcome to Stock Market Simulator, where you can simulate your investment strategies and track your potential returns in the stock market.
 
 ## Features 🌟
 
-- Record your voice by clicking the button below. You can stop the recording at any time.
-- You can speak in any language.
-- Upload your audio file for transcription.
+- Simulate your investment strategies with different stocks.
+- Calculate potential returns based on your investment amount and starting year.
+- Visualize your investment summary and track your progress.
 
 ## Demo 📺
 
-Try out AudioScripter [here](https://audio-scripter.elselab.dev).
+Experience the Stock Market Simulator in action [here](https://stock-market-simulator.elselab.dev).
 
 ## Getting Started 🚀
 
-To get a local copy up and running follow these simple steps.
+To run the Stock Market Simulator locally, follow these simple steps:
 
 ### Prerequisites
 
-- npm install npm@latest -g
+- Node.js and npm installed on your machine.
 
 ### Installation
 
-1. Clone the repo
-- git clone https://github.com/mstfbysl/audio-scripter.git
-2. Install NPM packages
-- npm install
+1. Clone the repository:
+git clone https://github.com/your-username/stock-market-simulator.git
+
+2. Navigate to the project directory:
+cd stock-market-simulator
+
+3. Install dependencies:
+npm install
+
 
 ## Usage 📋
 
-After installation, run the following command to start the application:
-- npm start
+After installation, start the application:
+npm start
+
 
 ## Contributing 🤝
 
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are welcome! Here's how you can contribute:
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Fork the project.
+2. Create your feature branch: `git checkout -b feature/AmazingFeature`.
+3. Commit your changes: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin feature/AmazingFeature`.
+5. Open a pull request.
 
 ## License 📜
 
-Distributed under the MIT License. See `LICENSE` for more information.
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
 ## Contact 📫
 
-- Project Link: [https://github.com/mstfbysl/audio-scripter](https://github.com/mstfbysl/audio-scripter)
+- Project Link: [https://github.com/your-username/stock-market-simulator](https://github.com/your-username/stock-market-simulator)
 
-Made with ❤️ by the msftbysl.
+Feel free to reach out if you have any questions or suggestions!
+
+Made with ❤️ by [Your Name].
