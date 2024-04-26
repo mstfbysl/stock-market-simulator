@@ -23,7 +23,7 @@ To run the Stock Market Simulator locally, follow these simple steps:
 ### Installation
 
 1. Clone the repository:
-git clone https://github.com/your-username/stock-market-simulator.git
+git clone https://github.com/mstfbysl/stock-market-simulator.git
 
 2. Navigate to the project directory:
 cd stock-market-simulator
@@ -33,13 +33,11 @@ npm install
 
 
 ## Usage 📋
-
 After installation, start the application:
 npm start
 
 
 ## Contributing 🤝
-
 Contributions are welcome! Here's how you can contribute:
 
 1. Fork the project.
@@ -49,13 +47,11 @@ Contributions are welcome! Here's how you can contribute:
 5. Open a pull request.
 
 ## License 📜
-
 This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
 ## Contact 📫
-
-- Project Link: [https://github.com/your-username/stock-market-simulator](https://github.com/your-username/stock-market-simulator)
+- Project Link: [https://github.com/mstfbysl/stock-market-simulator](https://github.com/mstfbysl/stock-market-simulator)
 
 Feel free to reach out if you have any questions or suggestions!
 
-Made with ❤️ by [Your Name].
+Made with ❤️ by [Mustafa Baysal].
