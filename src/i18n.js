@@ -7,7 +7,7 @@ import trTranslation from './locales/tr.json';
 i18n
   .use(initReactI18next)
   .init({
-    lng: 'en', 
+    lng: 'tr', 
     fallbackLng: 'en',
     resources: {
       en: {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Flex, Spacer, Button, Icon, Menu, MenuButton, MenuList, MenuItem } from '@chakra-ui/react';
 import { Link as ReactRouterLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { FiHome, FiCoffee } from 'react-icons/fi';
+import { FiHome, FiCoffee, FiGlobe  } from 'react-icons/fi';
 
 function Navbar() {
   const { t, i18n } = useTranslation();
@@ -27,8 +27,8 @@ function Navbar() {
           {t('buyMeACoffee')}
         </Button>
         <Menu>
-          <MenuButton as={Button} variant="ghost">
-            Language
+          <MenuButton as={Button} variant="ghost" leftIcon={<Icon as='FiGlobe' />}>
+            {t('language')}
           </MenuButton>
           <MenuList>
             <MenuItem onClick={() => changeLanguage('en')}>English</MenuItem>

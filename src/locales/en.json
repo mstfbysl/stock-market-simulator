@@ -27,5 +27,6 @@
     "placeholder": "For eg. 500",
     "shares": "shares",
     "disclaimerTitle": "Disclaimer",
-    "disclaimerText": "This website is for informational purposes only and does not constitute investment advice. We cannot guarantee the accuracy or completeness of the data provided on this page. All data displayed on this website is sourced from Yahoo Finance's public stock history and splits data covering the period from December 31, 2004, to the present."
+    "disclaimerText": "This website is for informational purposes only and does not constitute investment advice. We cannot guarantee the accuracy or completeness of the data provided on this page. All data displayed on this website is sourced from Yahoo Finance's public stock history and splits data covering the period from December 31, 2004, to the present.",
+    "language": "Language"
 }

@@ -31,22 +31,23 @@ function StockSelectionForm({ onSubmit }) {
   const years = Array.from({ length: 21 }, (_, i) => currentYear - i).reverse();
 
   return (
-    <VStack spacing={4}>
+    <VStack spacing={4} align="start">
+
       <Text>{t('selectStock')}</Text> {/* Translate the 'Which stock would you like to invest in?' text */}
       <HStack>
-        <Button colorScheme={selectedStock === 'AMZN' ? 'green' : 'blue'} onClick={() => setSelectedStock('AMZN')}>
+        <Button colorScheme={selectedStock === 'AMZN' ? 'purple' : 'gray'} onClick={() => setSelectedStock('AMZN')}>
           AMZN
         </Button>
-        <Button colorScheme={selectedStock === 'AAPL' ? 'green' : 'blue'} onClick={() => setSelectedStock('AAPL')}>
+        <Button colorScheme={selectedStock === 'AAPL' ? 'purple' : 'gray'} onClick={() => setSelectedStock('AAPL')}>
           AAPL
         </Button>
-        <Button colorScheme={selectedStock === 'GOOG' ? 'green' : 'blue'} onClick={() => setSelectedStock('GOOG')}>
+        <Button colorScheme={selectedStock === 'GOOG' ? 'purple' : 'gray'} onClick={() => setSelectedStock('GOOG')}>
           GOOG
         </Button>
-        <Button colorScheme={selectedStock === 'MSFT' ? 'green' : 'blue'} onClick={() => setSelectedStock('MSFT')}>
+        <Button colorScheme={selectedStock === 'MSFT' ? 'purple' : 'gray'} onClick={() => setSelectedStock('MSFT')}>
           MSFT
         </Button>
-        <Button colorScheme={selectedStock === 'SBUX' ? 'green' : 'blue'} onClick={() => setSelectedStock('SBUX')}>
+        <Button colorScheme={selectedStock === 'SBUX' ? 'purple' : 'gray'} onClick={() => setSelectedStock('SBUX')}>
           SBUX
         </Button>
       </HStack>
@@ -63,8 +64,9 @@ function StockSelectionForm({ onSubmit }) {
         placeholder={t('placeholder')}
         value={monthlyInvestment}
         onChange={(e) => setMonthlyInvestment(e.target.value)}
+        type="number"
       />
-      <Button colorScheme="green" onClick={handleSubmit}>
+      <Button colorScheme="blue" onClick={handleSubmit}>
         {t('calculateButton')} {/* Translate the 'Calculate' button text */}
       </Button>
     </VStack>
