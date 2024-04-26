@@ -25,5 +25,7 @@
     "profitLoss": "Zarar",
     "selectYear": "Yıl Seçin",
     "placeholder": "Örneğin 500",
-    "shares": "hisse"
+    "shares": "hisse",
+    "disclaimerTitle": "Uyarı",
+    "disclaimerText": "Bu web sitesi yalnızca bilgilendirme amaçlıdır ve yatırım tavsiyesi niteliği taşımaz. Bu sayfada sağlanan verilerin doğruluğunu veya eksiksizliğini garanti edemeyiz. Bu web sitesinde görüntülenen tüm veriler, Yahoo Finance'in halka açık hisse senedi geçmişinden alınmıştır ve 31 Aralık 2004'ten günümüze kadar olan dönemi kapsayan veriler bölünmüştür."
 }

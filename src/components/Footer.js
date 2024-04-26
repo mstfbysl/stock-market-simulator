@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Container, Text, Link, VStack, HStack, Icon } from '@chakra-ui/react';
 import { FaGithub, FaHeart } from 'react-icons/fa'; // Using react-icons for the heart icon
+import { Link as ReactRouterLink } from 'react-router-dom'; // Importing ReactRouterLink for internal navigation
 
 function Footer() {
   return (
@@ -10,8 +11,9 @@ function Footer() {
           <HStack spacing={2} justifyContent="center">
             <Text fontSize="sm">Made with</Text>
             <Icon as={FaHeart} color="red.500" />
-            <Text fontSize="sm">by the <a href="https://www.github.com/mstfbysl" target="_blank" rel="mstfbysl github">mstfbysl</a></Text>
+            <Text fontSize="sm">by the <Link href="https://www.github.com/mstfbysl" target="_blank" rel="noopener noreferrer">mstfbysl</Link></Text>
           </HStack>
+          <Text fontSize="sm">For disclaimers, please visit <Link as={ReactRouterLink} to="/disclaimer">here</Link></Text>
         </VStack>
       </Container>
     </Box>
