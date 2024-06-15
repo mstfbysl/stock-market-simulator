@@ -10,7 +10,7 @@ Welcome to Stock Market Simulator, where you can simulate your investment strate
 
 ## Demo 📺
 
-Experience the Stock Market Simulator in action [here](https://stock-market-simulator.elselab.dev).
+Experience the Stock Market Simulator in action [here](https://stockmarket.elselab.dev).
 
 ## Getting Started 🚀
 
